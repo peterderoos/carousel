@@ -38,8 +38,26 @@ body {
   color: #FFF;
   opacity: 0.75;
   border-radius: 10px;
-  transition: transform 1s;
+  transition: all 1s;
   background: black;
+  
+}
+
+.toggle {
+	float: left;
+	transform: none !important;
+	position: static;
+	margin-left: 100px;
+	margin-top: 50px;
+}
+
+.zoomin {
+	width: 1000px;
+	height: 400px;
+	z-index: 1;
+	position: absolute;
+	top: -50px;
+	left: 50px;
 }
 
 .item:hover {
@@ -69,7 +87,8 @@ body {
   width: 100px;
   color: white;
   position: relative;
-  top: 100px;
+  top: 350px;
+  left: 540px;
   padding: 1em 2em;
   cursor: pointer;
   background: black;
