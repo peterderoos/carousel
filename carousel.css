@@ -1,0 +1,81 @@
+html{
+	height: 100%;
+}
+
+body {
+   background: radial-gradient(white, black);
+  padding: 0;
+  font: 15px/20px Arial, sans-serif;
+  min-height: 100%;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 280px;
+  height: 200px;
+  position: relative;
+  perspective: 800px;
+  padding: 100px 0 0 0;
+}
+
+.carousel {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.item {
+  display: block;
+  position: absolute;
+  width: 280px;
+  height: 200px;
+  line-height: 200px;
+  font-size: 5em;
+  text-align: center;
+  color: #FFF;
+  opacity: 0.75;
+  border-radius: 10px;
+  transition: transform 1s;
+  background: black;
+}
+
+.item:hover {
+	background: white;
+}
+
+.a {
+  transform: rotateY(0deg) translateZ(250px);
+}
+.b {
+  transform: rotateY(60deg) translateZ(250px);
+}
+.c {
+  transform: rotateY(120deg) translateZ(250px);
+}
+.d {
+  transform: rotateY(180deg) translateZ(250px);
+}
+.e {
+  transform: rotateY(240deg) translateZ(250px);
+} 
+.f {
+  transform: rotateY(300deg) translateZ(250px);
+}
+
+.button {
+  width: 100px;
+  color: white;
+  position: relative;
+  top: 100px;
+  padding: 1em 2em;
+  cursor: pointer;
+  background: black;
+  border-radius: 5px;
+  border-top: 1px solid #111212;
+  box-shadow: 0 5px 0 #111212;
+  transition: box-shadow 0.1s, top 0.1s;
+  text-align: center;
+}
