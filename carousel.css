@@ -3,7 +3,7 @@ html{
 }
 
 body {
-   background: radial-gradient(white, black);
+  background: radial-gradient(white, black);
   padding: 0;
   font: 15px/20px Arial, sans-serif;
   min-height: 100%;
@@ -38,26 +38,24 @@ body {
   color: #FFF;
   opacity: 0.75;
   border-radius: 10px;
-  transition: all 1s;
-  background: black;
-  
+  transition: transform 1s;
+  background: black;  
 }
 
 .toggle {
 	float: left;
-	transform: none !important;
 	position: static;
 	margin-left: 100px;
 	margin-top: 50px;
 }
 
 .zoomin {
-	width: 1000px;
-	height: 400px;
+	width: 1100px;
+	height: 600px;
 	z-index: 1;
 	position: absolute;
-	top: -50px;
-	left: 50px;
+	top: -100px;
+	left: 0;
 }
 
 .item:hover {
