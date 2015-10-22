@@ -26,17 +26,18 @@ $('.button').click(function() {
 		$('.item').attr('style','');
 		rotateInterval = setInterval(myTimer, 100);
 		$('.container').css('width', '280px');
+				$(this).css("opacity", "0.75");
 	}
 	else {
-		$('.item').css('transform', 'none')
-		currdeg = 0;
+		$('.item').css('transform', 'none');
+		currdeg -= currdeg%360;
 		clearInterval(rotateInterval);
 		rotateInterval = null;
 		carousel.css({
-			"-webkit-transform": "rotateY("+0+"deg)",
-			"-moz-transform": "rotateY("+0+"deg)",
-			"-o-transform": "rotateY("+0+"deg)",
-			"transform": "rotateY("+0+"deg)"
+			"-webkit-transform": "rotateY("+currdeg+"deg)",
+			"-moz-transform": "rotateY("+currdeg+"deg)",
+			"-o-transform": "rotateY("+currdeg+"deg)",
+			"transform": "rotateY("+currdeg+"deg)"
 		});
   		$('.container').css('width', 'auto');
 	}
@@ -47,7 +48,7 @@ var a = 0;
 $('.item').click(function(){
 	if (toggled) {
 		$(this).toggleClass('zoomin');
-		$(this).css("opacity", "1");
+		$(this).css("opacity", "1 !important");
 	}
 	else {
 			console.dir($(this));
