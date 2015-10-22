@@ -26,7 +26,7 @@ $('.button').click(function() {
 		$('.item').attr('style','');
 		rotateInterval = setInterval(myTimer, 100);
 		$('.container').css('width', '280px');
-				$(this).css("opacity", "0.75");
+				//$(this).css("opacity", "0.75");
 	}
 	else {
 		$('.item').css('transform', 'none');
