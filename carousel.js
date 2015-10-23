@@ -49,7 +49,6 @@ if (Meteor.isClient) {
 				$(this).toggleClass('zoomin');
 				$(this).css("opacity", "1 !important");
 			} else {
-				console.dir($(this));
 				if (a % 2 == 0) {
 					b = false;
 					currdeg = currdeg - (currdeg % 360) - (60 * $(this).context.dataset.id);
