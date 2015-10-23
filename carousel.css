@@ -1,5 +1,5 @@
-html{
-	height: 100%;
+html {
+  height: 100%;
 }
 
 body {
@@ -11,9 +11,10 @@ body {
 }
 
 iframe {
-	margin-top: 5px;
-	border-radius: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
 }
+
 .container {
   margin: 0 auto;
   width: 280px;
@@ -43,45 +44,50 @@ iframe {
   opacity: 0.75;
   border-radius: 10px;
   transition: transform 1s;
-  background: black;  
+  background: black;
 }
 
 .toggle {
-	float: left;
-	position: static;
-	margin-left: 100px;
-	margin-top: 50px;
+  float: left;
+  position: static;
+  margin-left: 100px;
+  margin-top: 50px;
 }
 
 .zoomin {
-	width: 85%;
-	height: 600px;
-	z-index: 1;
-	position: absolute;
-	top: -100px;
-	left: 0;
-	opacity: 1;
+  width: 85%;
+  height: 600px;
+  z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  opacity: 1;
 }
 
 .item:hover {
-	background: white;
+  background: white;
 }
 
 .a {
   transform: rotateY(0deg) translateZ(250px);
 }
+
 .b {
   transform: rotateY(60deg) translateZ(250px);
 }
+
 .c {
   transform: rotateY(120deg) translateZ(250px);
 }
+
 .d {
   transform: rotateY(180deg) translateZ(250px);
 }
+
 .e {
   transform: rotateY(240deg) translateZ(250px);
-} 
+}
+
 .f {
   transform: rotateY(300deg) translateZ(250px);
 }
