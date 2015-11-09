@@ -26,7 +26,7 @@ $('.button').click(function() {
 		$('.item').attr('style','');
 		rotateInterval = setInterval(myTimer, 100);
 		$('.container').css('width', '280px');
-				//$(this).css("opacity", "0.75");
+		//$(this).css("opacity", "0.75");
 	}
 	else {
 		$('.item').css('transform', 'none');
@@ -38,7 +38,8 @@ $('.button').click(function() {
 			"-moz-transform": "rotateY("+currdeg+"deg)",
 			"-o-transform": "rotateY("+currdeg+"deg)",
 			"transform": "rotateY("+currdeg+"deg)"
-		});
+		}); 	
+
   		$('.container').css('width', 'auto');
 	}
 })
@@ -59,7 +60,6 @@ $('.item').click(function(){
 	}
 	if( a%2==1){b=true;
 		$(this).attr('style','');
-		//$(this).context.style.transform = "rotateY("+$(this).context.dataset.id*60+"deg) translateZ("+250+"px)";
 		$(this).css("opacity", "0.75");
 	}
 	a++;

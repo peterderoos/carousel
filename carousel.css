@@ -8,19 +8,19 @@ body {
   font: 15px/20px Arial, sans-serif;
   min-height: 100%;
   margin: 0;
-}
 
-iframe {
-	margin-top: 5px;
-	border-radius: 10px;
 }
 .container {
+  top: 100px;
   margin: 0 auto;
   width: 280px;
   height: 200px;
   position: relative;
-  perspective: 800px;
-  padding: 100px 0 0 0;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform: preserve-3d;
+  -o-transform: preserve-3d;
+
 }
 
 .carousel {
@@ -28,19 +28,22 @@ iframe {
   width: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform: preserve-3d;
+  -o-transform: preserve-3d;
+  transition: transform: 1s;
 }
 
 .item {
   display: block;
   position: absolute;
   width: 280px;
-  height: 200px;
+  min-height: 200px;
   line-height: 200px;
   font-size: 5em;
   text-align: center;
   color: #FFF;
-  opacity: 0.75;
+  opacity: 0.75;	
   border-radius: 10px;
   transition: transform 1s;
   background: black;  
@@ -49,18 +52,19 @@ iframe {
 .toggle {
 	float: left;
 	position: static;
-	margin-left: 100px;
-	margin-top: 50px;
+	left: 0;
+	top: 0;
 }
 
 .zoomin {
-	width: 85%;
-	height: 600px;
+	height: 90vh;
+	width: 95%;
 	z-index: 1;
-	position: absolute;
-	top: -100px;
-	left: 0;
+	position: fixed;
+	top: 5vh;
+	bottom: 5vh;
 	opacity: 1;
+	left: 2.5%;
 }
 
 .item:hover {
@@ -68,22 +72,40 @@ iframe {
 }
 
 .a {
-  transform: rotateY(0deg) translateZ(250px);
+	transform: rotateY(0deg) translateZ(250px);
+  	-webkit-transform: rotateY(0deg) translateZ(250px);
+	-moz-transform: rotateY(0deg) translateZ(250px);
+	-o-transform: rotateY(0deg) translateZ(250px);
 }
 .b {
-  transform: rotateY(60deg) translateZ(250px);
+	transform: rotateY(60deg) translateZ(250px);
+  	-webkit-transform: rotateY(60deg) translateZ(250px);
+	-moz-transform: rotateY(60deg) translateZ(250px);
+	-o-transform: rotateY(60deg) translateZ(250px);
 }
 .c {
-  transform: rotateY(120deg) translateZ(250px);
+	transform: rotateY(120deg) translateZ(250px);
+  	-webkit-transform: rotateY(120deg) translateZ(250px);
+	-moz-transform: rotateY(120deg) translateZ(250px);
+	-o-transform: rotateY(120deg) translateZ(250px);
 }
 .d {
-  transform: rotateY(180deg) translateZ(250px);
+	transform: rotateY(180deg) translateZ(250px);
+  	-webkit-transform: rotateY(180deg) translateZ(250px);
+	-moz-transform: rotateY(180deg) translateZ(250px);
+	-o-transform: rotateY(180deg) translateZ(250px);
 }
 .e {
-  transform: rotateY(240deg) translateZ(250px);
+	transform: rotateY(240deg) translateZ(250px);
+  	-webkit-transform: rotateY(240deg) translateZ(250px);
+	-moz-transform: rotateY(240deg) translateZ(250px);
+	-o-transform: rotateY(240deg) translateZ(250px);
 } 
 .f {
-  transform: rotateY(300deg) translateZ(250px);
+	transform: rotateY(300deg) translateZ(250px);
+  	-webkit-transform: rotateY(300deg) translateZ(250px);
+	-moz-transform: rotateY(300deg) translateZ(250px);
+	-o-transform: rotateY(300deg) translateZ(250px);
 }
 
 .button {

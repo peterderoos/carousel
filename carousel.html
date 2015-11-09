@@ -1,18 +1,76 @@
 <head>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 
 <body>
-<div class="container">
-  <div class="carousel">
-    <div class="item a" data-id="0"><iframe src="http://www.w3schools.com" width="98%" height="90%"></iframe></div>
-    <div class="item b" data-id="1"></div>
-    <div class="item c" data-id="2"></div>
-    <div class="item d" data-id="3"></div>
-    <div class="item e" data-id="4"></div>
-    <div class="item f" data-id="5"></div>
-  </div>
-</div>	
-<div class="button">Switch</div>
+
+	<div class="container">
+		<div class="carousel">
+			<div class="item a" data-id="0"></div>
+			<div class="item b" data-id="1"></div>
+			<div class="item c" data-id="2"></div>
+			<div class="item d" data-id="3"></div>
+			<div class="item e" data-id="4"></div>
+			<div class="item f" data-id="5"></div>
+		</div>
+	</div>	
+	<div class="button">Switch</div>
+
+	<div class="demo">
+            <p class="y">y: <span>0</span> deg</p>
+            <p class="x">x: <span>0</span> deg</p>
+            <p class="z">z: <span>0</span> deg</p>
+        </div>
+		<script>
+            $('document').ready(function(){
+				
+                // check deviceorientation support
+                // true:  set event listener
+                // false: alert message
+                ("DeviceOrientationEvent" in window)
+                    ? window.addEventListener('deviceorientation', deviceOrientationHandler, false) 
+                    : alert("Your browser does not support device orientation.");
+
+                // handler for device orientation event
+                function deviceOrientationHandler(e) {
+
+                    // rotation along the x-axis
+                    var z = Math.floor(e.alpha);
+				
+                    // rotation along the y-axis
+                    var y = Math.floor(e.beta);
+
+                    // rotation along the z-axis
+                    var x = Math.floor(e.gamma);
+					
+                    if(window.innerHeight > window.innerWidth){
+
+					$('.container').css({
+			"-webkit-transform": "rotateX("+(y-90)+"deg)",
+			"-moz-transform": "rotateX("+(y-90)+"deg)",
+			"-o-transform": "rotateX("+(y-90)+"deg)",
+			"transform": "rotateX("+(y-90)+"deg)"
+		});
+		$('.zoomin').css('height', '45vh');
+
+	}
+					else {
+					$('.container').css({
+			"-webkit-transform": "rotateX("+(x-90)+"deg)",
+			"-moz-transform": "rotateX("+(x-90)+"deg)",
+			"-o-transform": "rotateX("+(x-90)+"deg)",
+			"transform": "rotateX("+(x-90)+"deg))"
+		});
+		$('.zoomin').css('height', '90vh');
+					}
+	
+                    $('.y span').text(y);
+                    $('.x span').text(x);
+                    $('.z span').text(z);
+
+                }
+            });
+        </script>
 </body>
