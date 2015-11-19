@@ -1,5 +1,6 @@
 if (Meteor.isClient) {
 window.onload = function() {
+	
 var carousel = $(".carousel");
     currdeg  = 0;
 //Aanmaken variabele voor rotatie
@@ -10,7 +11,7 @@ var toggled = false;
 //Aanmaken functie voor rotatie
 function myTimer() {
 	if(b) 
-	currdeg -= 5;
+	currdeg -= 4;
 	  carousel.css({
     "-webkit-transform": "rotateY("+currdeg+"deg)",
     "-moz-transform": "rotateY("+currdeg+"deg)",
@@ -66,5 +67,30 @@ $('.item').click(function(){
 	}
 
 });
+
+		var colorThief = new ColorThief();
+
+		var jelle = $('.jelle');
+		jelle = document.querySelector(".jelle");
+	
+		var c = colorThief.getColor(jelle);	
+		
+		var time = performance.now();
+		$('body').css('backgroundColor', 'rgb('+c[0]+','+c[1]+','+c[2]+')')
+		console.log(c);
+		
+		var d = colorThief.getPalette(jelle, 6);
+		
+		for(i=0; i<6;i++){
+				$('.item'+[i]).css('backgroundColor', 'rgb('+d[i][0]+','+d[i][1]+','+d[i][2]+')')
+		}
+		
+		var e = colorThief.getPalette(jelle, 6);
+		for(i=0; i<6;i++){
+				var o = (i<5)?i+1:0;
+				$('.item'+[i]).css('color', 'rgb('+e[o][0]+','+e[o][1]+','+e[o][2]+')')
+		}
+		console.log(performance.now()-time);
+		
 };
 }
