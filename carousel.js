@@ -70,25 +70,38 @@ $('.item').click(function(){
 
 		var colorThief = new ColorThief();
 
-		var jelle = $('.jelle');
-		jelle = document.querySelector(".jelle");
+		var jelle = document.querySelector(".jelle");
 	
 		var c = colorThief.getColor(jelle);	
 		
 		var time = performance.now();
-		$('body').css('backgroundColor', 'rgb('+c[0]+','+c[1]+','+c[2]+')')
+		$('body').css({
+						'-webkit-background-color': 'rgb('+c[0]+','+c[1]+','+c[2]+')',
+						'-moz-background-color': 'rgb('+c[0]+','+c[1]+','+c[2]+')',
+						'-o-background-color': 'rgb('+c[0]+','+c[1]+','+c[2]+')',
+						'background-color': 'rgb('+c[0]+','+c[1]+','+c[2]+')'
+		
+		});
+		
+		
 		console.log(c);
 		
 		var d = colorThief.getPalette(jelle, 6);
 		
-		for(i=0; i<6;i++){
-				$('.item'+[i]).css('backgroundColor', 'rgb('+d[i][0]+','+d[i][1]+','+d[i][2]+')')
+		for(var i=0; i<6;i++){
+				console.log(i)
+				$('.item'+[i]).css({
+						'-webkit-background-color': 'rgb('+d[i][0]+','+d[i][1]+','+d[i][2]+')',
+						'-moz-background-color': 'rgb('+d[i][0]+','+d[i][1]+','+d[i][2]+')',
+						'-o-background-color': 'rgb('+d[i][0]+','+d[i][1]+','+d[i][2]+')',
+						'background-color': 'rgb('+d[i][0]+','+d[i][1]+','+d[i][2]+')'
+		
+		});
 		}
 		
-		var e = colorThief.getPalette(jelle, 6);
-		for(i=0; i<6;i++){
+		for(var i=0; i<6;i++){
 				var o = (i<5)?i+1:0;
-				$('.item'+[i]).css('color', 'rgb('+e[o][0]+','+e[o][1]+','+e[o][2]+')')
+				$('.item'+[i]).css('color', 'rgb('+d[o][0]+','+d[o][1]+','+d[o][2]+')')
 		}
 		console.log(performance.now()-time);
 		
